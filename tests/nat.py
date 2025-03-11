@@ -132,8 +132,6 @@ class NATICMPBackTest(RouterBaseTest):
     def runTest(self):
         _ = self.catchDirectPacket(packet_scapy.ICMP)
 
-        testutils.simple_icmp_packet
-
         backpkt = testutils.simple_icmp_packet(ip_src="1.1.1.1", ip_dst="192.168.2.2", eth_dst="ee:44:44:44:44:44", eth_src="ee:22:22:22:22:22", icmp_type=0)
 
         exp_pkt = backpkt.copy()
